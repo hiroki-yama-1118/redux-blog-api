@@ -35,6 +35,6 @@ app.get("/", (req, res) => {
 });
 
 //サーバーを立ち上げる
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
   console.log(`listening port ${port}`);
 });
