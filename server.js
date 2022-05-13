@@ -30,6 +30,10 @@ app.use("/blogs", blogsRouter);
 app.use("/books", booksRouter);
 app.use("/s3url", s3urlRouter);
 
+app.get("/", (req, res) => {
+  res.send("Hello world");
+});
+
 //サーバーを立ち上げる
 app.listen(port, () => {
   console.log(`listening port ${port}`);
