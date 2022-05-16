@@ -18,19 +18,6 @@ app.use(cors());
 //express使う
 app.use(express.json());
 
-//それぞれのページのroutesを指定
-const usersRouter = require("./routes/users");
-const blogsRouter = require("./routes/blogs");
-const booksRouter = require("./routes/books");
-const s3urlRouter = require("./routes/s3url");
-
-
-//ルーターに読み込まれる
-app.use("/users", usersRouter);
-app.use("/blogs", blogsRouter);
-app.use("/books", booksRouter);
-app.use("/s3url", s3urlRouter);
-
 // CORSを有効化;
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -41,6 +28,18 @@ app.use((req, res, next) => {
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
   next();
 });
+
+//それぞれのページのroutesを指定
+const usersRouter = require("./routes/users");
+const blogsRouter = require("./routes/blogs");
+const booksRouter = require("./routes/books");
+const s3urlRouter = require("./routes/s3url");
+
+//ルーターに読み込まれる
+app.use("/users", usersRouter);
+app.use("/blogs", blogsRouter);
+app.use("/books", booksRouter);
+app.use("/s3url", s3urlRouter);
 
 //テスト
 app.get("/", (req, res) => {
