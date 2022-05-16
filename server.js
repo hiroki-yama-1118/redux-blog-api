@@ -46,6 +46,7 @@ app.get("/", (req, res) => {
   res.send("Hello world");
 });
 
+
 //サーバーを立ち上げる
 app.listen(process.env.PORT || port, () => {
   console.log(`listening port ${port}`);
