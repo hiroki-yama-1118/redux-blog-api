@@ -41,7 +41,6 @@ app.use((req, res, next) => {
   next();
 });
 
-
 //テスト
 app.get("/", (req, res) => {
   res.send("Hello world");
