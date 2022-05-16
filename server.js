@@ -30,6 +30,7 @@ app.use("/blogs", blogsRouter);
 app.use("/books", booksRouter);
 app.use("/s3url", s3urlRouter);
 
+//テスト
 app.get("/", (req, res) => {
   res.send("Hello world");
 });
