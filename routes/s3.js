@@ -18,6 +18,7 @@ const s3 = new aws.S3({
   signatureVersion: "v4",
 });
 
+
 // upload a file to S3
 async function generateUploadURL() {
   const rawBytes = await randomBytes(16);
